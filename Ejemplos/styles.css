@@ -1,0 +1,104 @@
+html {
+    background-color: #333333;
+  }
+  
+  html,
+  nav ul li a {
+    color: #ffffff;
+  }
+  
+  #titulo {
+    /*
+      En bloque
+      o
+      Inline -> en linea
+      */
+  
+    background: #232488;
+    display: flex;
+    flex-direction: row;
+    /*
+    flex-wrap: wrap;
+    */
+    justify-content: left;
+    align-items: center;
+    align-content: center;
+  
+    /* espacios 
+      margin -> margenes 
+      padding -> relleno
+    */
+  
+    /*  margin: 20px; */
+  
+    padding: 20px;
+    margin: 10px;
+    /*
+  
+  px -> pixeles
+  cm -> centimetros
+  vw -> virtual width -> porcentaje del ancho VISIBLE de la pantalla
+  vh -> virtual height -> porcentaje del alto VISIBLE de la pantalla
+  % -> porcentaje del contenedor padre
+  em 
+  rem
+  
+  */
+  
+    /*
+      border: 2px solid #ffffff;
+  */
+    border-width: 5px;
+    border-style: dashed;
+    border-color: #ffffff;
+  }
+  
+  #titulo h1 {
+    width: 50%;
+  }
+  
+  #busqueda {
+    display: flex;
+    justify-content: end;
+    width: 50%;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+  }
+  
+  nav ul li {
+    list-style: none;
+  }
+  
+  nav ul li a {
+    /*
+    Si ponemos dos
+    Primero vertical
+    Segundo horizontal
+    
+    margin: 0px 20px;
+  
+    De a 4 (reloj):
+    margin: 10px 20px 30px 40px;
+    
+    Lo mismo que:
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    margin-left: 40px;
+    */
+  
+    margin: 0px 20px;
+    text-decoration: none;
+  }

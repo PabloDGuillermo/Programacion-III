@@ -1,0 +1,27 @@
+/* Para hacer comentarios */
+
+p{
+    color: blue;
+}
+
+body{
+    background-color: grey;
+    color: violet;
+    background-image: url(https://i.pinimg.com/originals/3a/73/78/3a7378d12482b1da987c94f4d954fcb3.jpg);
+    background-size: 100%;
+}
+
+footer{
+    color: rgb(3, 119, 3);
+}
+
+.Rojas{
+    color: red;
+}
+
+#TextoFooter{
+    color: darkred;
+    font-size: 80px;
+    font:bold;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

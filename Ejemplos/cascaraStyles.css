@@ -1,0 +1,32 @@
+body{
+    background: antiquewhite;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#container{
+    width: 90%; /*toma el % del ancho del cuadrado padre*/
+    /*padding: 0% 1%;*/
+    margin: 0px auto; /*para centrarlo a la pantalla lo mas posible*/
+    border:1px solid black;
+}
+header{
+    background: red;
+    height: 100px;
+    margin: 0px;
+    text-align: center;/*alinear horizontal texto*/
+    line-height: 100px; /*alinear verticalmente*/
+    color:white; /*color del texto*/
+    border-bottom: 5px groove black;
+}
+nav{
+    background: lightblue;
+    height: 50px;
+}
+nav ul li{
+    float: left;/*manda los elementos flotantes a la izq*/
+    list-style: none;/*saca estilos, puntitos, numeros, demas*/
+    margin: 10px;/*separa los elementos*/
+    line-height: 30px;
+}
+.clearfix{
+    clear:both;/*corta la flotacion*/
+}
