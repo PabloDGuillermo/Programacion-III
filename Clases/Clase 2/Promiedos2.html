@@ -10,77 +10,83 @@
     />
   </head>
   <body>
-    <header>
-      <a href="#Inicio">
-        <img
-          src="https://promiedos.nyc3.cdn.digitaloceanspaces.com/menu/logo2.jpg"
-        />
-      </a>
-      <div id="TextoBienvenida">
-        <p>
-          <b><u>Bienvenidos a Promiedos</u></b>
-          <br />
-          <i>La mejor página de fútbol del mundo</i>
-        </p>
-      </div>
-    </header>
-    <main></main>
-    <br />
-    <div>
+    <div id="Principal">
+      <header>
+        <div id="ImagenPrincipal">
+          <a href="#Inicio">
+            <img
+              src="https://promiedos.nyc3.cdn.digitaloceanspaces.com/menu/logo2.jpg"
+            />
+          </a>
+        </div>
+        <div id="TextoBienvenida">
+          <p>
+            <b><u>Bienvenidos a Promiedos</u></b>
+            <br />
+            <i>La mejor página de fútbol del mundo</i>
+          </p>
+        </div>
+      </header>
       <section>
-        <a href="#LigaProfesional">Liga Profesional</a>
+        <main></main>
         <br />
-        <a href="#BNacional">B Nacional</a>
+        <aside id="BarraLateral">
+          <ul>
+            <li>
+              <a href="#LigaProfesional">Liga Profesional</a>
+            </li>
+            <li>
+              <a href="#BNacional">B Nacional</a>
+            </li>
+            <li>
+              <a href="#BMetropolitana">B Metropolitana</a>
+            </li>
+            <li>
+              <a href="#LaLiga">La Liga</a>
+            </li>
+          </ul>
+        </aside>
         <br />
-        <a href="#BMetropolitana">B Metropolitana</a>
-        <br />
-        <a href="#LaLiga">La Liga</a>
+
+        <div id="PartidosDelDia">
+          <nav id="PartidosDias">
+            <button><a href="#PartidosAyer">Partidos ayer</a></button>
+            <p><u>Partidos hoy</u></p>
+            <button><a href="#PartidosMañana">Partidos mañana</a></button>
+          </nav>
+          <br />
+          <table>
+            <thead>
+              <caption>
+                Liga Profesional
+              </caption>
+            </thead>
+            <tbody>
+              <tr>
+                <td>14hs</td>
+                <td>Racing</td>
+                <td>Instituto</td>
+                <td><a href="#FichaDelPartido">Ficha</a></td>
+              </tr>
+              <tr>
+                <td>17hs</td>
+                <td>Boca</td>
+                <td>Gimnasia (LP)</td>
+                <td><a href="#FichaDelPartido">Ficha</a></td>
+              </tr>
+              <tr>
+                <td>20hs</td>
+                <td>River</td>
+                <td>Riestra</td>
+                <td><a href="#FichaDelPartido">Ficha</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
+      <footer>
+        <p><b>@PabloDGuillermo</b> Todos los derechos reservados</p>
+      </footer>
     </div>
-    <br />
-
-    <div>
-      <span>
-        <p>
-          <button>Partidos ayer</button>
-          Partidos hoy
-          <button>Partidos mañana</button>
-        </p>
-      </span>
-    </div>
-
-    <div>
-      <br />
-      <table>
-        <thead>
-          <caption>
-            Liga Profesional
-          </caption>
-        </thead>
-        <tbody>
-          <tr>
-            <td>14hs</td>
-            <td>Racing</td>
-            <td>Instituto</td>
-            <td><a href="#FichaDelPartido">Ficha</a></td>
-          </tr>
-          <tr>
-            <td>17hs</td>
-            <td>Boca</td>
-            <td>Gimnasia (LP)</td>
-            <td><a href="#FichaDelPartido">Ficha</a></td>
-          </tr>
-          <tr>
-            <td>20hs</td>
-            <td>River</td>
-            <td>Riestra</td>
-            <td><a href="#FichaDelPartido">Ficha</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <footer>
-      <p><b>@PabloDGuillermo</b> Todos los derechos reservados</p>
-    </footer>
   </body>
 </html>

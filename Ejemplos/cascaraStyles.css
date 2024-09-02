@@ -1,3 +1,8 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
 body{
     background: antiquewhite;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -5,13 +10,12 @@ body{
 #container{
     width: 90%; /*toma el % del ancho del cuadrado padre*/
     /*padding: 0% 1%;*/
-    margin: 0px auto; /*para centrarlo a la pantalla lo mas posible*/
+    margin: auto; /*para centrarlo a la pantalla lo mas posible*/
     border:1px solid black;
 }
 header{
     background: red;
     height: 100px;
-    margin: 0px;
     text-align: center;/*alinear horizontal texto*/
     line-height: 100px; /*alinear verticalmente*/
     color:white; /*color del texto*/
@@ -20,6 +24,7 @@ header{
 nav{
     background: lightblue;
     height: 50px;
+    border-bottom: 1px solid black;
 }
 nav ul li{
     float: left;/*manda los elementos flotantes a la izq*/
@@ -29,4 +34,45 @@ nav ul li{
 }
 .clearfix{
     clear:both;/*corta la flotacion*/
+}
+
+#content{
+    float: left;
+    width:calc(80% - 80px);
+    min-height: 500px;
+    background: green;
+    padding: 40px;
+}
+
+.article{
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.article:first-child{
+    padding-top: 10px;
+    border-top:1px solid #eee;
+}
+
+.article h2{
+    font-size: 25px;
+}
+
+aside{
+    float:left;
+    width: calc(20% - 20px);
+    min-height: 500px;
+    background: orange;
+    padding:10px;
+}
+
+footer{
+    background: black;
+    color:white;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
 }
