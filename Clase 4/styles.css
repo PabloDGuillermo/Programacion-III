@@ -1,0 +1,95 @@
+main {
+  display: grid;
+  grid-template-columns: 2fr 5fr 2fr;
+  grid-template-rows: 1fr 1fr 8fr;
+  width: 100vw;
+  height: 100vh;
+  grid-gap: 10px;
+}
+
+header {
+  grid-row: 1;
+  grid-column: 1 / 4;
+  background-color: grey;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+header img {
+  height: 20px;
+  width: 20px;
+  border-radius: 5px;
+}
+
+nav {
+  grid-column: 2 / 4;
+  grid-row: 2;
+  background-color: darkgray;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+nav button {
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+#lateral {
+  grid-column: 1;
+  grid-row: 2 / 4;
+  background-color: black;
+  color: white;
+}
+
+#lateral ul {
+  font-family: "Courier New", Courier, monospace;
+}
+
+#lateral ul li {
+  list-style: none;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#lateral ul li:hover {
+  text-decoration: underline;
+}
+
+#lateral ul li:nth-child(5) {
+  font-weight: 700;
+}
+
+#lateral ul li img {
+  height: 16px;
+  width: 16px;
+}
+
+#principal {
+  grid-column: 2;
+  grid-row: 3;
+  background-color: gray;
+}
+
+#principal article {
+  margin: 15px;
+  border-style: dashed;
+  border-color: black;
+}
+
+#anuncio {
+  grid-column: 3;
+  grid-row: 3;
+  background-color: deeppink;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThODdJw1Z_k6bxFDIxjyEmLb9F0rxoJNTGfQ&s);
+  background-repeat: repeat;
+}

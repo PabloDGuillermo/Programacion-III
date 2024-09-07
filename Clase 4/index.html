@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Pablo Guillermo</title>
+  </head>
+  <body>
+    <!-- Main debería ser una grilla de 3 filas y 3 columas que ocupe el 100% del espacio de la pantalla. -->
+    <!-- El header debe ocupar TODA la primer fila.-->
+    <!-- El nav debe ocupar la segunda fila a partir de la segunda columna-->
+    <!-- la sección lateral debe ocupar la primer columna a partir de la segunda fila -->
+    <!-- La section principal debe ocupar la columna del medio a partir de la tercera fila -->
+    <!-- La sección anuncio debe ocupar la última columna a partid de la tercera fila -->
+    <main>
+      <!--El header debe de mostrar todos sus elementos uno al lado del otro en flex. -->
+      <header>
+        <!-- imagen de 20px X 20px con bordes redondeados -->
+        <div>
+          <img
+            id="img-logo"
+            src="https://www.racingclub.com.ar/img/escudo/escudo2014.png"
+          />
+          <h1>Título a la izquierda!</h1>
+        </div>
+        <!-- Todo lo que sigue a la derecha! -->
+        <div>
+          <input id="input-busqueda" />
+          <button id="btn-buscar">Buscar</button>
+          <button id="btn-perfil">Perfil</button>
+        </div>
+      </header>
+      <nav>
+        <button>Botones</button>
+        <button>con</button>
+        <button>bordes</button>
+        <button>redondeados</button>
+        <button>transparentes</button>
+        <button>con márgen de separación</button>
+      </nav>
+      <section id="lateral">
+        <h3>Esta sección tiene fondo oscuro y letras blancas</h3>
+        <ul>
+          <li>Quitar los &#9899; del listado</li>
+          <li>Este listado tiene subrayado SOLO si el mouse está encima</li>
+          <li>Este listado tiene márgenes verticales 10px entre elementos</li>
+          <li>Este listado como fuente courier new!</li>
+          <li>Este elemento está en negrita!</li>
+          <li>
+            <img
+              alt="Tamaño: 16px X 16px"
+              src="https://www.racingclub.com.ar/img/escudo/escudo1918.png"
+            />Este elemento tiene una imagen al lado!
+          </li>
+          <li>
+            <a href="https://github.com/PabloDGuillermo" target="_blank"
+              >Este elemento me lleva a tu github y se abre en otra pestaña!</a
+            >
+          </li>
+        </ul>
+      </section>
+      <section id="principal">
+        <h1>Sección principal!</h1>
+        <article>
+          <h2>Esto es un artículo!</h2>
+          <p>
+            Sabían que los article sirven para delimitar partes aisladas del
+            documento?
+          </p>
+          <p>
+            En fin, este articulo tiene un borde de guiones --------- color
+            negro!
+          </p>
+          <p>También, todos los article tienen un margen de 15px!</p>
+        </article>
+        <article>
+          <h1>Aquí hay otro article!</h1>
+          <p>Estaría bien que se vea como el otro</p>
+        </article>
+      </section>
+      <section id="anuncio">
+        <img
+          alt="Aquí va una imagen que ocupe todo el espacio que pueda y se repita para llenar todo su contenedor!"
+        />
+      </section>
+    </main>
+  </body>
+</html>
