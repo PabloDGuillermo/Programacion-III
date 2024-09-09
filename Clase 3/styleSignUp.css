@@ -1,0 +1,15 @@
+html{
+    background-color: #2B2738;
+}
+
+body{
+    height: 700px;
+    width: 700px;
+    background-color: #2B2738;
+    display: flex;
+    flex-direction: row;
+}
+
+#ImagenPrincipal{
+    height: 100%;
+}
