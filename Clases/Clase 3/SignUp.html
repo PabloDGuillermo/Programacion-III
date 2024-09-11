@@ -12,34 +12,44 @@
   <body>
     <header></header>
     <section>
-      <img
-        id="ImagenPrincipal"
-        src="https://images.pagina12.com.ar/styles/focal_content_1200x1050/public/2023-01/692933-leo-20messi-20copa-20del-20mundo.jpeg?h=fcdc4171&itok=rWyK-jw9"
-      />
+      <img id="ImagenPrincipal" src="Messi-Copa.jpeg" />
     </section>
     <main>
       <h1>Crear una cuenta</h1>
-      <h3>Ya tiene una cuenta? <a href="Login"> Log in</a>a></h3>
+      <h3>Ya tiene una cuenta? <a href="Login"> Log in</a></h3>
       <form action="">
-        <label for="nombre">Nombre</label>
-        <input id="nombre" type="text" placeholder="Nombre" />
-        <label for="apellido">Apellido</label>
-        <input id="apellido" type="text" placeholder="Apellido" />
+        <div>
+          <div class="campo">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" type="text" placeholder="Nombre" />
+          </div>
+          <div class="campo">
+            <label for="apellido">Apellido</label>
+            <input id="apellido" type="text" placeholder="Apellido" />
+          </div>
+        </div>
+
         <label for="mail">Mail</label>
         <input id="mail" type="mail" placeholder="Mail" />
         <label for="contraseña">Contraseña</label>
         <input id="contraseña" type="password" placeholder="Contraseña" />
-        <input type="checkbox" /> Acepto los <a href="TerminosYCondiciones">términos y condiciones</a>
+        <div id="divCheckBox">
+          <input type="checkbox" />
+          <p>
+            Acepto los <a href="TerminosYCondiciones">términos y condiciones</a>
+          </p>
+        </div>
         <button type="submit">Crear cuenta</button>
-    </form>
-    <p>O regristrese con</p>
-    <div id="BotonesRegistro">
+      </form>
+      <div id="SeparadorRegistro">
+        <hr />
+        <span>O registrese con</span>
+        <hr />
+      </div>
+      <div id="BotonesRegistro">
         <button>Google</button>
         <button>Github</button>
-    </div>
+      </div>
     </main>
-    <footer>
-      <p><b>@PabloDGuillermo</b> Todos los derechos reservados</p>
-    </footer>
   </body>
 </html>
