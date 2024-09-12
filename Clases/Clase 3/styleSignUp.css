@@ -1,15 +1,100 @@
-html{
-    background-color: #2B2738;
+html {
+  background-color: #2b2738;
+  display:flex;
+  justify-content: center;
 }
 
-body{
-    height: 700px;
-    width: 700px;
-    background-color: #2B2738;
+body {
+  height: 700px;
+  width: 1000px;
+  padding: 30px;
+  background-color: #2b2738;
+  display: flex;
+  flex-direction: row;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+#ImagenPrincipal {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  width: 50%;
+  height: 100%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+main h1 {
+  width: 100%;
+  font-size: 55px;
+  margin-bottom: -10px;
+  text-align: center;
+}
+
+main h3 {
+  font-weight: 100;
+}
+
+div {
+    display: flex;
+    gap: 20px; /* Espacio entre los grupos de label/input */
+  }
+  
+  label {
+    display: block;
+  }
+  
+  label, input {
+    padding: 5px;
+  }
+  
+  .campo {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  #divCheckBox{
     display: flex;
     flex-direction: row;
-}
+    align-items: center;
+  }
 
-#ImagenPrincipal{
-    height: 100%;
-}
+  #divCheckBox input{
+    height: 20px;
+    width: 20px;
+    margin: 0px;
+  }
+
+  form button{
+    height: 30px;
+  }
+
+  #BotonesRegistro{
+    width: 100%;
+    justify-content: center;
+  }
+
+  #BotonesRegistro button{
+    width: 40%;
+    height: 30px;
+  }
+
+  #SeparadorRegistro{
+    display: inline-flex;
+    margin: 10px;
+  }
+
+  hr{
+    width: 30%;
+  }
+  
