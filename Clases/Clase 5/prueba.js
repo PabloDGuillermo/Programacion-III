@@ -77,3 +77,27 @@ let array = [1, 2, 2, 3, 4, 3, 5];
 let nuevoArray = removerDuplicados(array);
 
 console.log(nuevoArray);
+
+//Sumar dígitos a partir de un string
+console.log("\nSumar dígitos a partir de un string\n");
+
+function sumarDigitos(cadena){
+    let suma = 0;
+
+    for(i=0;i<cadena.length;i++){
+        suma+=parseInt(cadena[i]);
+    }
+
+    return suma;
+}
+
+console.log(sumarDigitos("123456"));
+
+//Convertir arrays anidados en un array plano
+console.log("\nConvertir arrays anidados en un array plano\n");
+
+function flatterArray(arrayAnidado){
+    let arrayRetorno = [];
+
+    
+}

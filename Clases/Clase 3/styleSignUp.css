@@ -1,5 +1,5 @@
 html {
-  background-color: #2b2738;
+  background-color: green;
   display:flex;
   justify-content: center;
 }
@@ -8,7 +8,7 @@ body {
   height: 700px;
   width: 1000px;
   padding: 30px;
-  background-color: #2b2738;
+  background-color: darkgreen;
   display: flex;
   flex-direction: row;
   font-family: Arial, Helvetica, sans-serif;
@@ -55,6 +55,8 @@ div {
   
   label, input {
     padding: 5px;
+    border-radius: 10px;
+    margin-top: 5px;
   }
   
   .campo {
@@ -77,6 +79,7 @@ div {
 
   form button{
     height: 30px;
+    border-radius: 10px;
   }
 
   #BotonesRegistro{
@@ -87,6 +90,7 @@ div {
   #BotonesRegistro button{
     width: 40%;
     height: 30px;
+    border-radius: 10px;
   }
 
   #SeparadorRegistro{
