@@ -1,12 +1,17 @@
 import Usuario from "./usuario.js"
 
-let usuario1 = Usuario.Registro("Malena", "PabloTeAmo", "malena@gmail.com");
-let usuario2 = Usuario.Registro("Pablo", "MaleTeAmo", "pablo@gmail.com");
-let usuario3 = Usuario.Registro("Centurion", "AguanteLaFalopa", "falopita@gmail.com");
-let usuario4 = Usuario.Registro("Milito", "SoyCra", "milito@gmail.com");
+let usuario1 = new Usuario("Diego Milito", "RacingCampeon", "milito_22@gmail.com");
+let usuario2 = new Usuario("Pablo Guillermo", "RacingClub", "pablo@gmail.com");
+let usuario3 = new Usuario("Centurion", "Merluza", "centurion@gmail.com");
 
-let usuarios = [usuario1, usuario2, usuario3, usuario4];
+localStorage.clear();
 
-localStorage.setItem("usuarios", usuarios);
+let usuarios = [usuario1, usuario2, usuario3];
+
+localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
 Usuario.Listado();
+
+console.log(Usuario.Login("milito_22@gmail.com", "RacingCampeon"));
+console.log(Usuario.Login("pablo@gmail.com", "fdsfsd"));
+console.log(Usuario.Login("dsadas", "fdsfsd"));
