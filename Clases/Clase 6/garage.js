@@ -1,20 +1,30 @@
 import Auto from "./auto.js";
 
 export default class Garage{
-    _razonSocial = "";
-    _precioPorHora = 0;
-    _autos = [Auto];
+    #_razonSocial = "";
+    #_precioPorHora = 0;
+    #_autos = [Auto];
 
-    get RazonSocial(){return this._razonSocial}
-    get PrecioPorHora(){return this._precioPorHora}
-    get Autos(){return this._autos}
+    get RazonSocial(){return this.#_razonSocial}
+    set RazonSocial(nuevaRazonSocial){
+        if(typeof nuevaRazonSocial === "string"){
+            this.#_razonSocial = nuevaRazonSocial;
+        }
+    }
+    get PrecioPorHora(){return this.#_precioPorHora}
+    set PrecioPorHora(nuevoPrecioPorHora){
+        if(typeof nuevoPrecioPorHora === "number"){
+            this.#_precioPorHora = nuevoPrecioPorHora;
+        }
+    }
+    get Autos(){return this.#_autos}
 
     constructor(razonSocial, precioPorHora){
-        if(typeof razonSocial == "string"){
-            this._razonSocial = razonSocial;
+        if(typeof razonSocial === "string"){
+            this.RazonSocial = razonSocial;
         }
-        if(typeof precioPorHora == 'number'){
-            this._precioPorHora = precioPorHora;
+        if(typeof precioPorHora === "number"){
+            this.PrecioPorHora = precioPorHora;
         }
     }
 
@@ -51,6 +61,8 @@ export default class Garage{
         if(auto instanceof Auto){
             if(this.Equals(auto)){
                 this.Autos.splice(this.Autos.indexOf(auto),1);
+                console.log(`Se removió con éxito el auto:`);
+                Auto.MostrarAuto(auto)
             }else{
                 console.log("El auto no está en el Garage");
             }

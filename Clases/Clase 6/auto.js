@@ -1,40 +1,47 @@
 export default class Auto {
-  _color = "";
-  _precio = 0;
-  _marca = "";
-  _fecha = Date();
+  #_color = "";
+  #_precio = 0;
+  #_marca = "";
+  #_fecha = Date();
 
   constructor(color, precio, marca, fecha) {
     if (typeof color == "string") {
-      this._color = color;
+      this.#_color = color;
     }
     if (typeof precio == "number") {
-      this._precio = precio;
+      this.#_precio = precio;
     }
     if (typeof marca == "string") {
-      this._marca = marca;
+      this.#_marca = marca;
     }
     if (fecha instanceof Date) {
-      this._fecha = fecha;
+      this.#_fecha = fecha;
     }
   }
 
   get Color() {
-    return this._color;
+    return this.#_color;
   }
   get Precio() {
-    return this._precio;
+    return this.#_precio;
+  }
+  set Precio(nuevoPrecio){
+    if(typeof nuevoPrecio === "number"){
+      this.#_precio = nuevoPrecio;
+    }
   }
   get Marca() {
-    return this._marca;
+    return this.#_marca;
   }
   get Fecha() {
-    return this._fecha;
+    return this.#_fecha;
   }
 
   AgregarImpuestos(numero) {
-    if (typeof numero == "number") {
-      this._precio += numero;
+    if (typeof numero === "number") {
+      console.log(`Precio original de ${this.Marca}: ${this.Precio}`);
+      this.Precio += numero;
+      console.log(`Precio con impuesto agregado: ${this.Precio}`);
     }
   }
 
@@ -42,13 +49,13 @@ export default class Auto {
     if (auto instanceof Auto) {
       let cadena =
         "Información del Auto\n- Color: " +
-        auto._color +
+        auto.Color +
         "\n- Precio: " +
-        auto._precio +
+        auto.Precio +
         "\n- Marca: " +
-        auto._marca +
+        auto.Marca +
         "\n-Fecha: " +
-        auto._fecha +
+        auto.Fecha +
         "\n";
       console.log(cadena);
     }
@@ -56,7 +63,7 @@ export default class Auto {
 
   static Equals(auto1, auto2) {
     if (auto1 instanceof Auto && auto2 instanceof Auto) {
-      if (auto1._marca === auto2._marca) {
+      if (auto1.Marca === auto2.Marca) {
         return true;
       }
       return false;

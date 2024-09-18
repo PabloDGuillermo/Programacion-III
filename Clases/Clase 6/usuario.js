@@ -4,24 +4,39 @@ export default class Usuario {
   #_mail = "";
 
   get Nombre() {
-    return this._nombre;
+    return this.#_nombre;
+  }
+  set Nombre(nuevoNombre){
+    if(typeof nuevoNombre === "string"){
+      this.#_nombre = nuevoNombre;
+    }
   }
   get Clave() {
-    return this._clave;
+    return this.#_clave;
+  }
+  set Clave(nuevaClave){
+    if(typeof nuevaClave === "string"){
+      this.#_clave = nuevaClave;
+    }
   }
   get Mail() {
-    return this._mail;
+    return this.#_mail;
+  }
+  set Mail(nuevoMail){
+    if(typeof nuevoMail === "string"){
+      this.#_mail = nuevoMail;
+    }
   }
 
   constructor(nombre, clave, mail) {
     if (
-      typeof nombre == "string" &&
-      typeof clave == "string" &&
-      typeof mail == "string"
+      typeof nombre === "string" &&
+      typeof clave === "string" &&
+      typeof mail === "string"
     ) {
-      this._nombre = nombre;
-      this._clave = clave;
-      this._mail = mail;
+      this.Nombre = nombre;
+      this.Clave = clave;
+      this.Mail = mail;
     }
   }
 
@@ -29,9 +44,9 @@ export default class Usuario {
     let usuarios = JSON.parse(localStorage.getItem("usuarios"));
 
     for (let i = 0; i < usuarios.length; i++) {
-      console.log(`Nombre: ${usuarios[i]._nombre} 
-Clave: ${usuarios[i]._clave}
-Mail: ${usuarios[i]._mail}`);
+      console.log(`Nombre: ${usuarios[i].Nombre} 
+Clave: ${usuarios[i].Clave}
+Mail: ${usuarios[i].Mail}`);
     }
   }
 
@@ -39,8 +54,8 @@ Mail: ${usuarios[i]._mail}`);
     let usuarios = JSON.parse(localStorage.getItem("usuarios"));
 
     for (let i = 0; i < usuarios.length; i++) {
-      if (usuarios[i]._mail === mail) {
-        if (usuarios[i]._clave === contraseña) {
+      if (usuarios[i].Mail === mail) {
+        if (usuarios[i].Clave === contraseña) {
           return "Verificado";
         } else {
           return "Error en los datos";
@@ -49,4 +64,13 @@ Mail: ${usuarios[i]._mail}`);
     }
     return "Usuario no registrado";
   }
+
+  toJSON() {
+    return {
+      Nombre: this.#_nombre,
+      Clave: this.#_clave,
+      Mail: this.#_mail,
+    };
+  }
 }
+
