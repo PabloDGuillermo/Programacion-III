@@ -46,17 +46,16 @@ export default class Garage {
   }
 
   Equals(auto) {
-    for(let i = 0;i<this.Autos.length;i++){
-        if(Auto.Equals(auto,this.Autos[i])){
-            return true;
-        }
+    for (let i = 0; i < this.Autos.length; i++) {
+      if (Auto.Equals(auto, this.Autos[i])) {
+        return true;
+      }
     }
     return false;
   }
 
   Add(auto) {
-      if (auto instanceof Auto) {
-        console.log("Es un auto")
+    if (auto instanceof Auto) {
       if (this.Equals(auto)) {
         return false;
       } else {
