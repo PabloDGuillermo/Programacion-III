@@ -64,7 +64,7 @@ export default class Serie {
     if (genres instanceof Array) {
       this.#_genres = genres;
     }
-    if (typeof image == "string") {
+    if (image instanceof Object) {
       this.#_image = image;
     }
   }
@@ -74,29 +74,34 @@ export default class Serie {
   }
 
   static createFromJsonString(json) {
-    let objetoJSON = JSON.parse(JSON.stringify(json));
+    let objetoJSON = JSON.parse(json);
 
     return new Serie(parseInt(objetoJSON.id), objetoJSON.url, objetoJSON.name, objetoJSON.language, objetoJSON.genres, objetoJSON.image);
   }
 
   createHtmlElement(){
-    let newNode = document.createElement("p");
+    let nodoParrafo = document.createElement("p");
+    let texto;
 
-    let texto = `Nombre: ${this.name} - Idioma: ${this.language} - Género: ${this.genres} - Imagen: ${this.image}`;
+    if(this.name === "Not Found"){
+      texto = "La serie no existe";
+    }else{
+      texto = `- Nombre: ${this.name}\n- Idioma: ${this.language}\n- Género: ${this.genres}`;
+    }
+    nodoParrafo.innerText = texto;
+    nodoParrafo.id = this.id
 
-    newNode.innerText = texto;
-
-    return newNode;
+    return nodoParrafo;
   }
 
-//   toJSON() {
-//     return {
-//       id: this.id,
-//       url: this.url,
-//       name: this.name,
-//       language: this.language,
-//       genres: this.genres,
-//       image: this.image
-//     };
-//   }
+  toJSON(){
+    return {
+      id: this.#_id,
+      genres: this.#_genres,
+      image: this.#_image,
+      language: this.#_language,
+      name: this.#_name,
+      url: this.#_url
+    }
+  }
 }
