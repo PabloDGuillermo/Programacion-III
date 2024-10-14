@@ -17,7 +17,7 @@ async function traerDatos(api) {
   let elementoHTML = serie.createHtmlElement();
   let nodoBoton = document.createElement("button");
   nodoBoton.innerText = "Guardar";
-  nodoBoton.addEventListener("click", () => guardarSerie(serie));
+  nodoBoton.addEventListener("click", () => Serie.guardarSerie(serie));
   elementoHTML.appendChild(nodoBoton);
   
   let nodoImagen = document.createElement("img");
@@ -28,7 +28,7 @@ async function traerDatos(api) {
   nodoLink.appendChild(nodoImagen);
   elementoHTML.appendChild(nodoLink);
 
-  elementoDivSeries.insertBefore(elementoHTML, null);
+  elementoDivSeries.appendChild(elementoHTML);
 }
 
 window.onload = () => {
@@ -70,6 +70,3 @@ elementoBotonAnterior.addEventListener("click", () => {
   paginaAnterior();
 });
 
-function guardarSerie(serie){
-  localStorage.setItem(serie.id, serie.toJsonString());
-}

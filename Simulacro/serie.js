@@ -86,12 +86,16 @@ export default class Serie {
     if(this.name === "Not Found"){
       texto = "La serie no existe";
     }else{
-      texto = `- Nombre: ${this.name}\n- Idioma: ${this.language}\n- Género: ${this.genres}`;
+      texto = `ID: ${this.id}\n- Nombre: ${this.name}\n- Idioma: ${this.language}\n- Género: ${this.genres}`;
     }
     nodoParrafo.innerText = texto;
     nodoParrafo.id = this.id
 
     return nodoParrafo;
+  }
+
+  static guardarSerie(serie){
+    localStorage.setItem(serie.id, serie.toJsonString());
   }
 
   toJSON(){
