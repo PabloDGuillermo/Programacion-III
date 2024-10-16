@@ -18,20 +18,13 @@ function obtenerLocalStorage() {
     }
 }
 
-function dibujarSeriesEnPantalla(serie) {
+function dibujarSerieEnPantalla(serie) {
     let elementoHTML = serie.createHtmlElement();
-    let nodoBoton = document.createElement("button");
-    nodoBoton.innerText = "Eliminar";
-    nodoBoton.addEventListener("click", () => eliminarSerie(serie));
-    elementoHTML.appendChild(nodoBoton);
 
-    let nodoImagen = document.createElement("img");
-    let nodoLink = document.createElement("a");
-    nodoImagen.src = serie.image.medium;
-    nodoLink.href = serie.url;
-    nodoLink.target = "_blank";
-    nodoLink.appendChild(nodoImagen);
-    elementoHTML.appendChild(nodoLink);
+    let elementoBoton = elementoHTML.querySelector(`#boton${serie.id}`);
+    elementoBoton.removeEventListener("click", () => Serie.guardarSerie(serie));
+    elementoBoton.addEventListener("click", () => eliminarSerie(serie));
+    elementoBoton.innerText = "Eliminar";
 
     elementoDivSeries.appendChild(elementoHTML);
 }
@@ -41,7 +34,7 @@ window.onload = () => {
     for (let i = 0; i < arraySeries.length; i++) {
         contadorSeriesTraidas += 1;
         acumuladorSeriesTraidas += 1;
-        dibujarSeriesEnPantalla(arraySeries[i]);
+        dibujarSerieEnPantalla(arraySeries[i]);
     }
 };
 
@@ -86,6 +79,6 @@ function reescribirPantalla(arraySeries){
         elementoDivSeries.removeChild(elementoDivSeries.firstChild);
     }
     for(let i=0; i<arraySeries.length;i++){
-        dibujarSeriesEnPantalla(arraySeries[i]);
+        dibujarSerieEnPantalla(arraySeries[i]);
     }
 }

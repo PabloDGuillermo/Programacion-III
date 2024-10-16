@@ -7,6 +7,9 @@ const elementoDivSeries = document.getElementById("series");
 const elementoBotonSiguiente = document.getElementById("siguiente");
 const elementoBotonAnterior = document.getElementById("anterior");
 
+let modeToggler = document.getElementById("mode-toggler");
+let html = document.getElementsByTagName("html")[0];
+
 async function traerDatos(api) {
   const respuesta = await fetch(api);
 
@@ -15,18 +18,6 @@ async function traerDatos(api) {
   const serie = Serie.createFromJsonString(JSON.stringify(json));
 
   let elementoHTML = serie.createHtmlElement();
-  let nodoBoton = document.createElement("button");
-  nodoBoton.innerText = "Guardar";
-  nodoBoton.addEventListener("click", () => Serie.guardarSerie(serie));
-  elementoHTML.appendChild(nodoBoton);
-  
-  let nodoImagen = document.createElement("img");
-  let nodoLink = document.createElement("a");
-  nodoImagen.src = serie.image.medium;
-  nodoLink.href = serie.url;
-  nodoLink.target = "_blank";
-  nodoLink.appendChild(nodoImagen);
-  elementoHTML.appendChild(nodoLink);
 
   elementoDivSeries.appendChild(elementoHTML);
 }
@@ -37,6 +28,20 @@ window.onload = () => {
     contadorSeriesTraidas += 1;
     acumuladorSeriesTraidas += 1;
     traerDatos(url);
+  }
+
+  const theme = localStorage.getItem("theme");
+  switch (theme) {
+    case "dark":
+      modeToggler.classList.remove("bi-brightness-high");
+      modeToggler.classList.add("bi-moon");
+      html.setAttribute("data-bs-theme", "dark");
+      break;
+    case (null, "light"):
+      modeToggler.classList.add("bi-brightness-high");
+      modeToggler.classList.remove("bi-moon");
+      html.setAttribute("data-bs-theme", "light");
+      break;
   }
 };
 
@@ -70,3 +75,23 @@ elementoBotonAnterior.addEventListener("click", () => {
   paginaAnterior();
 });
 
+modeToggler.addEventListener("click", () => {
+  // REVISAMOS QUE MODO ESTAMOS USANDO
+  if (html.getAttribute("data-bs-theme") == "light") {
+    // ESTAMOS EN MODO LIGHT
+    modeToggler.classList.remove("bi-brightness-high");
+    modeToggler.classList.add("bi-moon");
+    //SETEAMOS LA PROPIEDAD DARK
+    html.setAttribute("data-bs-theme", "dark");
+    //GUARDAMOS LA PROPIEDAD DARK EN LOCAL STORAGE
+    localStorage.setItem("theme", "dark");
+  } else {
+    // ESTAMOS EN MODO DARK
+    modeToggler.classList.add("bi-brightness-high");
+    modeToggler.classList.remove("bi-moon");
+    //SETEAMOS LA PROPIEDAD LIGHT
+    html.setAttribute("data-bs-theme", "light");
+    //GUARDAMOS LA PROPIEDAD LIGHT EN LOCAL STORAGE
+    localStorage.setItem("theme", "light");
+  }
+});

@@ -80,18 +80,45 @@ export default class Serie {
   }
 
   createHtmlElement(){
-    let nodoParrafo = document.createElement("p");
+    let nodoDiv = document.createElement("div");
+    let nodoH5 = document.createElement("h5");
+    let nodoTexto = document.createElement("p");
+    let nodoImagen = document.createElement("img");
+    let nodoLink = document.createElement("a");
+    let nodoBoton = document.createElement("button");
     let texto;
 
     if(this.name === "Not Found"){
       texto = "La serie no existe";
     }else{
-      texto = `ID: ${this.id}\n- Nombre: ${this.name}\n- Idioma: ${this.language}\n- Género: ${this.genres}`;
+      texto = `ID: ${this.id}\n- Idioma: ${this.language}\n- Género: ${this.genres}`;
     }
-    nodoParrafo.innerText = texto;
-    nodoParrafo.id = this.id
+    nodoDiv.id = this.id
+    nodoDiv.classList = "card";
 
-    return nodoParrafo;
+    nodoH5.classList = "card-title";
+    nodoH5.innerText = this.#_name;
+
+    nodoTexto.classList = "card-text";
+    nodoTexto.innerText = texto;
+
+    nodoImagen.src = this.image.medium;
+    
+    nodoLink.href = this.url;
+    nodoLink.target = "_blank";
+    nodoLink.appendChild(nodoImagen);
+
+    nodoBoton.addEventListener("click", () => Serie.guardarSerie(this));
+    nodoBoton.innerText = "Guardar";
+    nodoBoton.classList = "btn btn-secondary";
+    nodoBoton.id = `boton${this.id}`;
+
+    nodoDiv.appendChild(nodoH5);
+    nodoDiv.appendChild(nodoTexto);
+    nodoDiv.appendChild(nodoLink);
+    nodoDiv.appendChild(nodoBoton);
+
+    return nodoDiv;
   }
 
   static guardarSerie(serie){

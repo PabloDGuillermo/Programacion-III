@@ -9,6 +9,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css" />
     <title>Simulacro PP - 2024</title>
   </head>
@@ -17,15 +18,18 @@
       <header>
         <h1>Inicio</h1>
         <h3>Simulacro PP - Programación III - 2024</h3>
+        <i class="bi bi-brightness-high" id="mode-toggler"></i>
       </header>
       <nav id="panel-izquierda">
-        <a href="./index.html">Inicio</a>
-        <a href="./guardados.html">Guardados</a>
+        <a href="./index.html" class="link-dark">Inicio</a>
+        <a href="./guardados.html" class="link-dark">Guardados</a>
       </nav>
       <section id="principal">
         <div id="series"></div>
-        <button id="anterior">Página anterior</button>
-        <button id="siguiente">Página siguiente</button>
+        <div id="divBotones">
+          <button id="anterior" class="btn btn-primary">Página anterior</button>
+          <button id="siguiente" class="btn btn-primary">Página siguiente</button>
+        </div>
       </section>
     </main>
     <script type="module" src="./main.js"></script>
